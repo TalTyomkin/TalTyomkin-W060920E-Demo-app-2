@@ -1,19 +1,30 @@
 import React, { Component } from 'react';
+import './users.css';
 
 class Users  extends Component {
     state = { 
         users: [
             {id:'sdfgs', name:'spiderman', age:57, mail:'spiderman@gmail.com'},
             {id:'ghgjgj',name:'batman', age:13, mail:'batman@gmail.com'},
-            {id:'rerwerw',name:'superman', age:31, mail:'superman@gmail.com'},
+            {id:'rerwerw',name:'superman', age:131, mail:'superman@gmail.com'},
         ]
     }
-    onHandlerAlert(e){
-        alert('Are you sure you want to delete this hero???');
-        console.log(e)
+    // constructor() {
+    //     super();
+
+    //     this.onHandlerAlert = this.onHandlerAlert.bind(this)
+    // }
+    ageClass(user){
+        return user > 25 ? 'red' : 'green'
+    }
+    removeUser = (id) => {
+        let {users} = this.state;
+        users = users.filter(user => user.id !== id);
+        this.setState({users})
         console.log(this)
     }
     render() { 
+        if(this.state.users.length === 0) return <h2>No users found</h2>
         return (
             <div className="container">
                 <div className="row">
@@ -28,18 +39,18 @@ class Users  extends Component {
                       </thead>
                       <tbody>
                         {this.state.users.map(user => (
-                          <tr key={user.id}>
+                          <tr key={user.id} className = {this.ageClass(user.age)}>
                             <td>{user.name}</td>
                             <td>{user.age}</td>
                             <td>{user.mail}</td>
                             <td>
                             <button
-                                onClick={this.onHandlerAlert}
+                                onClick={() => this.removeUser(user.id)}
                                 type="button"
                                 className="btn btn-danger"
                             >
                                 Delete
-                            </button>
+                            </button >
                             </td>
                           </tr>
                         ))}

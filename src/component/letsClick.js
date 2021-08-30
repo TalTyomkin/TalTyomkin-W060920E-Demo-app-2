@@ -32,8 +32,10 @@ class LetsClick extends Component {
     }
         
     render() { 
+        console.log(this)
         return ( 
             <div style={{padding: 100}}>
+                <h1>{this.props.name}</h1>
                 <button onClick = {() => this.handleButtond('reset')}>Rest</button>
                 <h2 style = {{fontSize:'4rem',color:'midnightblue'}}>{this.state.num}</h2>
                 {/* <button

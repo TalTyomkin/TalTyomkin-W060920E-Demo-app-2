@@ -9,7 +9,7 @@ function App() {
       <h1 className='app_c'>Welcome !!!</h1>
       <Users />
       <Header />
-      <LetsClick />
+      <LetsClick name = 'Tal'/>
     </div>
   );
 }
