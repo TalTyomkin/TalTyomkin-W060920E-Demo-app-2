@@ -16,7 +16,7 @@ class LetsClick extends Component {
     //     this.setState({num})
     //     }
     // }
-    handleButtond = (action) => {
+    handleButton = (action) => {
         let {num} = this.state;
 
         if(action === 'add'){
@@ -36,7 +36,7 @@ class LetsClick extends Component {
         return ( 
             <div style={{padding: 100}}>
                 <h1>{this.props.name}</h1>
-                <button onClick = {() => this.handleButtond('reset')}>Rest</button>
+                <button onClick = {() => this.handleButton('reset')}>Rest</button>
                 <h2 style = {{fontSize:'4rem',color:'midnightblue'}}>{this.state.num}</h2>
                 {/* <button
                     onClick = {this.addCount}
@@ -56,7 +56,7 @@ class LetsClick extends Component {
                      - 
                 </button> */}
                 <button
-                    onClick = {() =>this.handleButtond('add')}
+                    onClick = {() =>this.handleButton('add')}
                     type="button"
                     className="btn btn-success"
                     style={{margin: 50,padding: 40,fontSize:'2.5rem'}}
@@ -65,7 +65,7 @@ class LetsClick extends Component {
                 </button>
                 <span> |--------------------------------| </span>
                 <button
-                    onClick = {() =>this.handleButtond('reduce')}
+                    onClick = {() =>this.handleButton('reduce')}
                     type="button"
                     className="btn btn-danger"
                     style={{margin: 50,padding: 40,fontSize:'2.5rem'}}

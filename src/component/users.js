@@ -6,7 +6,7 @@ class Users  extends Component {
         users: [
             {id:'sdfgs', name:'spiderman', age:57, mail:'spiderman@gmail.com'},
             {id:'ghgjgj',name:'batman', age:13, mail:'batman@gmail.com'},
-            {id:'rerwerw',name:'superman', age:131, mail:'superman@gmail.com'},
+            {id:'rerwerw',name:'superman', age:31, mail:'superman@gmail.com'},
         ]
     }
     // constructor() {
